@@ -9,7 +9,7 @@ const LandingPage = () => {
   return (
     <div
       className="landing-container"
-      style={{ backgroundImage: `url('/assets/qr-bg2.jpeg')` }}
+      style={{ backgroundImage: `url('/assets/qr-bg1.jpeg')` }}
     >
       <Helmet>
         <title>PixQR | Smart QR Code Generator</title>
@@ -21,7 +21,10 @@ const LandingPage = () => {
 
       <div className="landing-overlay">
         <div className="landing-content">
-          <h1 className="landing-title">PixQR</h1>
+        <h1 className="landing-title">
+  Pix<span className="qr-style">QR</span>
+</h1>
+
           <p className="landing-subtitle">
             Create, Customize & Download Stunning QR Codes
           </p>

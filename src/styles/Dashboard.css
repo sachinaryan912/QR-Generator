@@ -1,125 +1,387 @@
-/* src/styles/Dashboard.css */
-
+/* Reset & Base */
 body {
-    margin: 0;
-    font-family: 'SF Pro Display', -apple-system, sans-serif;
+  margin: 0;
+  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.dashboard {
+  background: linear-gradient(135deg, #1a1a1a, #302700);
+  min-height: 100vh;
+  color: #e7bc00;
+  position: relative;
+}
+
+.dashboard-intro {
+  /* background: rgba(255, 255, 255, 0.05); */
+  /* backdrop-filter: blur(10px); */
+  padding: 2rem;
+  border-radius: 20px;
+  margin-bottom: 2rem;
+  color: #fff;
+  /* box-shadow: 0 0 12px rgba(245, 212, 66, 0.05); */
+  transition: all 0.3s ease;
+}
+
+.dashboard-intro h2 {
+  font-size: 2rem;
+  color: #ffe28a;
+  margin-bottom: 1rem;
+}
+
+.dashboard-intro p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #e4e4e4;
+  margin-bottom: 1rem;
+}
+
+.dashboard-intro ul {
+  list-style: none;
+  padding-left: 1rem;
+  margin: 0;
+}
+
+.dashboard-intro li {
+  margin: 0.6rem 0;
+  font-size: 0.95rem;
+  color: #f5f5f5;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.dashboard-intro li strong {
+  color: #ffe28a;
+}
+
+.tip {
+  margin-top: 1rem;
+  font-style: italic;
+  font-size: 0.9rem;
+  color: #d3d3d3;
+}
+
+/* Responsive tweaks */
+@media screen and (max-width: 768px) {
+  .dashboard-intro {
+    padding: 1.2rem;
   }
-  
-  .dashboard {
-    background-color: #000;
-    min-height: 100vh;
-    color: #e7bc00;
-    position: relative;
-  }
-  
-  .navbar {
-    background: rgba(255, 255, 255, 0.08);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 10dvw;
-    backdrop-filter: blur(10px);
-    position: sticky;
-    top: 0;
-    z-index: 10;
-  }
-  
-  .logo {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: #e7bc00;
-  }
-  
-  .nav-right {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-  }
-  
-  .token {
-    display: flex;
-    align-items: center;
-    border: 1px solid #e7bc00;
-    padding: 0.4rem 0.8rem;
-    border-radius: 18px;
-    gap: 0.5rem;
-    font-weight: 600;
-  }
-  
-  .user-info {
-    position: relative;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-  }
-  
-  .user-popup {
-    position: absolute;
-    top: 2rem;
-    right: 0;
-    background: rgba(0, 0, 0, 0.85);
-    padding: 1rem;
-    border-radius: 10px;
-    width: 200px;
-    color: #fff;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 0 12px rgba(245, 212, 66, 0.3);
-    z-index: 999;
-    transition: all 0.3s ease;
-  }
-  
-  .user-popup p {
-    margin: 0.3rem 0;
-    font-size: 0.9rem;
-  }
-  
-  .user-popup button {
-    margin-top: 0.5rem;
-    width: 100%;
-    padding: 0.5rem;
-    background-color: #e7bc00;
-    color: #000;
-    font-weight: 600;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-  }
-  
-  .main-section {
-    padding: 3rem 10dvw;
-  }
-  
-  .section-title {
-    font-size: 1.8rem;
-    margin-bottom: 1.5rem;
-    color: #fff;
-  }
-  
-  .card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 1.5rem;
-  }
-  
-  .card {
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(10px);
-    padding: 1.5rem;
-    border-radius: 15px;
+
+  .dashboard-intro h2 {
+    font-size: 1.5rem;
     text-align: center;
-    color: #fff;
-    transition: transform 0.3s ease;
-    cursor: pointer;
+  }
+
+  .dashboard-intro p,
+  .dashboard-intro li {
+    font-size: 0.9rem;
+    text-align: left;
+  }
+
+  .dashboard-intro ul {
+    padding-left: 0.6rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .dashboard-intro {
+    padding: 1rem;
+  }
+
+  .dashboard-intro h2 {
+    font-size: 1.3rem;
+  }
+
+  .dashboard-intro p,
+  .dashboard-intro li {
+    font-size: 0.85rem;
+  }
+}
+
+
+.toggle-btn {
+  background-color: transparent;
+  border: 1px solid #ffe28a;
+  color: #ffe28a;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+
+.toggle-btn:hover {
+  background-color: #ffe28a;
+  color: #000;
+}
+
+.collapsible-list {
+  max-height: 1000px;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.collapsible-list:not(.open) {
+  max-height: 0;
+  transition: max-height 0.4s ease;
+}
+
+.collapsible-list ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  padding-left: 1rem;
+}
+
+.collapsible-list li {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 0.95rem;
+  color: #f3f3f3;
+  gap: 0.5rem;
+}
+
+/* Responsive behavior */
+@media screen and (max-width: 768px) {
+  .collapsible-list ul {
+    padding-left: 0;
+  }
+
+  .collapsible-list li {
+    font-size: 0.85rem;
+  }
+}
+
+
+
+
+/* ===== NAVBAR ===== */
+.navbar {
+  /* background: rgba(255, 255, 255, 0.08); */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 10dvw;
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+/* Logo */
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #e7bc00;
+}
+
+/* Burger Icon */
+.burger-icon {
+  display: none;
+  font-size: 1.6rem;
+  color: #e7bc00;
+  cursor: pointer;
+}
+
+/* Nav Items (Desktop) */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.token {
+  display: flex;
+  align-items: center;
+  border: 1px solid #e7bc00;
+  padding: 0.4rem 0.8rem;
+  border-radius: 18px;
+  gap: 0.5rem;
+  font-weight: 600;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #e7bc00;
+}
+
+/* ===== User Section ===== */
+.user-dropdown-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.user-info {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 0.4rem 0.8rem;
+  border-radius: 18px;
+  transition: all 0.3s ease;
+}
+
+.dropdown-icon {
+  transition: transform 0.3s ease;
+  font-size: 0.9rem;
+  color: #fbbc00;
+}
+
+.dropdown-icon.rotate {
+  transform: rotate(180deg);
+}
+
+.user-popup {
+  position: absolute;
+  top: 2.5rem;
+  right: 0;
+  padding: 1rem;
+  border-radius: 30px;
+  width: 220px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.873);
+  backdrop-filter: blur(30px) !important;
+  animation: fadeIn 0.3s ease-in-out;
+  z-index: 999;
+}
+
+.user-popup p {
+  margin: 0.5rem 0;
+  font-size: 0.92rem;
+}
+
+.user-popup button {
+  margin-top: 0.8rem;
+  width: 100%;
+  padding: 0.6rem;
+  background-color: transparent;
+  color: #f98c74;
+  font-weight: 700;
+  border: none;
+  border-radius: 18px;
+  border: 1px solid #f98c74;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.user-popup button:hover {
+  background-color: #f98c74;
+  color: white;
+}
+
+/* ===== Responsive Navbar ===== */
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 5dvw;
+    gap: 0.5rem;
+  }
+
+  .burger-icon {
+    display: block;
+    position: absolute;
+    right: 5dvw;
+    top: 1.2rem;
+  }
+
+  .nav-right {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: transparent;
+    padding: 1rem;
+    border-radius: 0 0 12px 12px;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  .nav-right.open {
+    display: flex;
+  }
+
+  .user-popup{
+    backdrop-filter: blur(30px);
   }
   
-  .card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 12px rgba(245, 212, 66, 0.4);
+
+  .token{
+    justify-content: center;
   }
-  
-  .card h3 {
-    margin-top: 0.6rem;
-    font-size: 1.1rem;
+  .user-info {
+
+    width: fit-content;
+    justify-content: center;
   }
-  
+}
+
+/* ===== MAIN CONTENT ===== */
+.main-section {
+  padding: 3rem 10dvw;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #fff;
+  text-align: center;
+}
+
+/* ===== CARD GRID ===== */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  padding: 1.5rem;
+  border-radius: 15px;
+  text-align: center;
+  color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  border: 1px solid rgba(255, 215, 0, 0.1);
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 0.8rem;
+}
+
+.card h3 {
+  margin-top: 0.6rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.card-description {
+  font-size: 0.85rem;
+  margin-top: 0.4rem;
+  color: #d6d6d6;
+  opacity: 0.85;
+}
+
+/* ===== ANIMATION ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

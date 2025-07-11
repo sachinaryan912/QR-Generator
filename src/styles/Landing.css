@@ -31,11 +31,24 @@
 }
 
 .landing-title {
-  font-size: 4rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  color: #f5d442;
+  font-size: 5.5rem;
+  font-weight: 900;
+  text-align: center;
+  letter-spacing: 2px;
+
+  background: linear-gradient(135deg, #f5d442, #ffa500);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* For Firefox (partial support) */
+  background-clip: text;
+  color: transparent;
 }
+
+
+
+
+
 
 .landing-subtitle {
   font-size: 1.3rem;
@@ -71,20 +84,20 @@
 
 .btn-outline {
   background: transparent;
-  border: 2px solid #ffa500;
-  color: #ffa500;
+  border: 2px solid #fdd109;
+  color: #fdd109;
 }
 
 .btn-outline:hover {
-  background: #ffa500;
+  background: #fdd109;
   color: #000;
   transform: scale(1.03);
 }
 
 .info-section {
   margin-top: 3rem;
-  background-color: rgba(15, 15, 15, 0.6);
-  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.01);
+  backdrop-filter: blur(12px);
   border-radius: 16px;
   padding: 2rem;
   max-width: 850px;
