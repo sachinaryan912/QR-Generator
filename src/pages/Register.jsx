@@ -6,6 +6,7 @@ import { auth, database } from "../firebase";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import "../styles/Login.css"; // reuse login.css
+import { Helmet } from "react-helmet"; // for SEO
 
 const Register = () => {
   const navigate = useNavigate();
@@ -42,6 +43,37 @@ const Register = () => {
   };
 
   return (
+    <>
+
+<Helmet>
+  <title>Register | PixQR - Create Your Free Account</title>
+  <meta
+    name="description"
+    content="Join PixQR and start generating stylish QR codes. Register for free to access secure and premium QR features including vCard, SMS, Wi-Fi, and more."
+  />
+  <meta
+    name="keywords"
+    content="PixQR register, create QR account, sign up PixQR, generate QR codes, QR signup, register free QR generator"
+  />
+  <meta name="robots" content="index, follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="canonical" href="https://pixqr.online/register" />
+
+  {/* Open Graph */}
+  <meta property="og:title" content="Register | PixQR" />
+  <meta property="og:description" content="Create your free PixQR account to design secure and professional QR codes in seconds." />
+  <meta property="og:url" content="https://pixqr.online/register" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://pixqr.online/assets/preview-banner.png" />
+
+  {/* Twitter Card */}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Register | PixQR - Create Free Account" />
+  <meta name="twitter:description" content="Sign up to unlock PixQR features and start generating beautiful, secure QR codes instantly." />
+  <meta name="twitter:image" content="https://pixqr.online/assets/preview-banner.png" />
+</Helmet>
+
+    
     <div className="login-bg" style={{ backgroundImage: `url('/assets/qr-bg2.jpeg')` }}>
       <div className="overlay" />
       <motion.div
@@ -84,6 +116,7 @@ const Register = () => {
         </motion.div>
       </motion.div>
     </div>
+    </>
   );
 };
 

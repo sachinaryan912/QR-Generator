@@ -11,6 +11,7 @@ import { useNavigate } from "react-router-dom";
 import "../styles/Login.css";
 import googleIcon from "../assets/google-ic.png";
 import Loader from "../components/Loader"; // ✅ Import loader
+import { Helmet } from "react-helmet";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -69,7 +70,35 @@ const Login = () => {
   }
 
   return (
-    <div
+    <>
+    <Helmet>
+  <title>Login | PixQR - Secure QR Code Generator</title>
+  <meta
+    name="description"
+    content="Login to PixQR to create secure, custom QR codes. Access free and premium features including Wi-Fi, SMS, vCard, and more."
+  />
+  <meta
+    name="keywords"
+    content="PixQR login, QR code generator login, secure QR login, access PixQR, generate QR code, login to PixQR"
+  />
+  <meta name="robots" content="index, follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="canonical" href="https://pixqr.online/login" />
+
+  {/* Open Graph */}
+  <meta property="og:title" content="Login | PixQR" />
+  <meta property="og:description" content="Login to your PixQR account to start generating personalized and encrypted QR codes." />
+  <meta property="og:url" content="https://pixqr.online/login" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://pixqr.online/assets/preview-banner.png" />
+
+  {/* Twitter Card */}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Login | PixQR - Secure QR Code Generator" />
+  <meta name="twitter:description" content="Log in to access PixQR’s secure and stylish QR code generator with premium features." />
+  <meta name="twitter:image" content="https://pixqr.online/assets/preview-banner.png" />
+</Helmet>
+<div
       className="login-bg"
       style={{ backgroundImage: `url('/assets/qr-bg2.jpeg')` }}
     >
@@ -119,6 +148,9 @@ const Login = () => {
         </motion.div>
       </motion.div>
     </div>
+    
+    </>
+    
   );
 };
 

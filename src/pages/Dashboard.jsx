@@ -8,6 +8,7 @@ import "../styles/Dashboard.css";
 import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "../components/Navbar";
 import Loader from "../components/Loader";
+import { Helmet } from "react-helmet"; // for SEO
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -78,9 +79,36 @@ const cardData = [
 
   return (
 
-    
-    
-    <div className="dashboard">
+    <>
+    <Helmet>
+  <title>Dashboard | PixQR - Generate Smart QR Codes</title>
+  <meta
+    name="description"
+    content="Your personal PixQR dashboard to generate, customize, and manage secure QR codes for URL, Text, SMS, vCard, and more. 100% private & encrypted."
+  />
+  <meta
+    name="keywords"
+    content="PixQR dashboard, QR generator dashboard, manage QR codes, create QR code, custom QR, branded QR generator, PixQR user panel"
+  />
+  <meta name="robots" content="index, follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="canonical" href="https://pixqr.online/dashboard" />
+
+  {/* Open Graph */}
+  <meta property="og:title" content="Dashboard | PixQR - Generate QR Codes" />
+  <meta property="og:description" content="Access your PixQR dashboard to generate stylish QR codes, manage tokens, and customize designs with encryption and ease." />
+  <meta property="og:url" content="https://pixqr.online/dashboard" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://pixqr.online/assets/preview-banner.png" />
+
+  {/* Twitter Card */}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Dashboard | PixQR - Generate Smart QR Codes" />
+  <meta name="twitter:description" content="Customize and manage your QR codes using the PixQR Dashboard. Stylish, secure, and feature-rich." />
+  <meta name="twitter:image" content="https://pixqr.online/assets/preview-banner.png" />
+</Helmet>
+
+     <div className="dashboard">
       <Navbar userData={userData} />
       <main className="main-section">
         
@@ -148,6 +176,10 @@ const cardData = [
 
       </main>
     </div>
+    </>
+    
+    
+   
   );
 };
 
