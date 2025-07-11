@@ -6,6 +6,13 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import "./App.css";
 import Dashboard from "./pages/Dashboard";
+import UrlQRPage from "./pages/UrlQRPage";
+import TextQRPage from "./pages/TextQRPage";
+import EmailQRPage from "./pages/EmailQRPage";
+import WiFiQRPage from "./pages/WiFiQRPage";
+import VCardQRPage from "./pages/VCardQRPage";
+import SmsQRPage from "./pages/SmsQRPage";
+import LocationQRPage from "./pages/LocationQRPage";
 
 function App() {
   const [link, setLink] = useState("");
@@ -17,6 +24,14 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/home" element={<Dashboard />} />
+        <Route path="/generate/url" element={<UrlQRPage />} />
+        <Route path="/generate/text" element={<TextQRPage />} />
+        <Route path="/generate/email" element={<EmailQRPage />} />
+        <Route path="/generate/wifi" element={<WiFiQRPage />} />
+        <Route path="/generate/vcard" element={<VCardQRPage />} />
+        <Route path="/generate/sms" element={<SmsQRPage />} />
+        <Route path="/generate/location" element={<LocationQRPage />} />
+
       </Routes>
     </Router>
   );

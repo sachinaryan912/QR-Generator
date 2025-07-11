@@ -6,6 +6,8 @@ import { useNavigate } from "react-router-dom";
 import { FaBolt, FaChevronDown, FaBars, FaTimes } from "react-icons/fa";
 import "../styles/Dashboard.css";
 import { motion, AnimatePresence } from "framer-motion";
+import Navbar from "../components/Navbar";
+import Loader from "../components/Loader";
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -28,16 +30,16 @@ useEffect(() => {
   if (!isMobile) {setShowList(true); setMenuOpen(false)};
 }, [isMobile]);
 
-  const cardData = [
-    { title: "URL", description: "Redirect users to any website", img: "/assets/URL.png" },
-    { title: "Text", description: "Display static text/message", img: "/assets/Text.png" },
-    { title: "Email", description: "Pre-filled recipient & subject", img: "/assets/Email.png" },
-    { title: "Wi-Fi", description: "Share network SSID & password instantly", img: "/assets/WiFi.png" },
-    { title: "vCard", description: "Share business/contact info in 1 scan", img: "/assets/vCard.png" },
-    { title: "SMS", description: "Pre-filled message with phone number", img: "/assets/SMS.png" },
-    { title: "Location", description: "Share Google Maps or geo-coordinates", img: "/assets/Location.png" },
-  ];
-  
+const cardData = [
+  { title: "URL", description: "Redirect users to any website", img: "/assets/URL.png", path: "/generate/url" },
+  { title: "Text", description: "Display static text/message", img: "/assets/Text.png", path: "/generate/text" },
+  { title: "Email", description: "Pre-filled recipient & subject", img: "/assets/Email.png", path: "/generate/email" },
+  { title: "Wi-Fi", description: "Share network SSID & password instantly", img: "/assets/WiFi.png", path: "/generate/wifi" },
+  { title: "vCard", description: "Share business/contact info in 1 scan", img: "/assets/vCard.png", path: "/generate/vcard" },
+  { title: "SMS", description: "Pre-filled message with phone number", img: "/assets/SMS.png", path: "/generate/sms" },
+  { title: "Location", description: "Share Google Maps or geo-coordinates", img: "/assets/Location.png", path: "/generate/location" },
+];
+
   
 
   useEffect(() => {
@@ -70,80 +72,16 @@ useEffect(() => {
     navigate("/login");
   };
 
+  if (!userData) {
+    return <Loader text="Please wait! Fetching data..."/>;
+  }
+
   return (
+
+    
+    
     <div className="dashboard">
-      {/* <nav className="navbar">
-        <div className="logo">PixQR</div>
-        {userData && (
-          <div className="nav-right">
-            <div className="token">
-              <FaBolt /> {userData.token}
-            </div>
-
-            <div className="user-dropdown-wrapper" ref={popupRef}>
-              <div className="user-info" onClick={() => setShowPopup((prev) => !prev)}>
-                {userData.username}
-                <FaChevronDown className={`dropdown-icon ${showPopup ? "rotate" : ""}`} />
-              </div>
-
-              <AnimatePresence>
-                {showPopup && (
-                  <motion.div
-                    className="user-popup"
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <p><strong>Level:</strong> {userData.level}</p>
-                    <p><strong>Since:</strong> {new Date(userData.createdAt).toLocaleDateString()}</p>
-                    <button onClick={handleLogout}>Logout</button>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-          </div>
-        )}
-      </nav> */}
-
-<nav className="navbar">
-  <div className="logo">PixQR</div>
-
-  <div className="burger-icon" onClick={() => setMenuOpen(!menuOpen)}>
-  {menuOpen ? <FaTimes /> : <FaBars />}
-</div>
-
-
-  {/* Desktop & Mobile Menu */}
-  <div className={`nav-right ${menuOpen ? "open" : ""}`}>
-    <div className="token">
-      <FaBolt /> {userData?.token}
-    </div>
-
-    <div className="user-dropdown-wrapper" ref={popupRef}>
-      <div className="user-info" onClick={() => setShowPopup((prev) => !prev)}>
-        {userData?.username}
-        <FaChevronDown className={`dropdown-icon ${showPopup ? "rotate" : ""}`} />
-      </div>
-
-      <AnimatePresence>
-        {showPopup && (
-          <motion.div
-            className="user-popup"
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.3 }}
-          >
-            <p><strong>Level:</strong> {userData.level}</p>
-            <p><strong>Since:</strong> {new Date(userData.createdAt).toLocaleDateString()}</p>
-            <button onClick={handleLogout}>Logout</button>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
-  </div>
-</nav>
+      <Navbar userData={userData} />
       <main className="main-section">
         
       <div className="dashboard-intro">
@@ -162,7 +100,7 @@ useEffect(() => {
 
   <div className={`collapsible-list ${showList ? "open" : ""}`}>
     <ul>
-    <li>🔐 <strong>Privacy first:</strong> All your data is <strong>end-to-end encrypted</strong>. We never store or track your QR content.</li>
+    <li>🔐 <strong>Privacy first:</strong> All your data is <strong>end-to-end encrypted</strong>. We never track your QR content.</li>
     
     <li>⚡ <strong>Have tokens?</strong> Unlock advanced QR types like vCards, Wi-Fi, SMS, and premium designs.</li>
     <li>🎨 <strong>Premium perks:</strong> Add logos, gradients, background images, and more customization options.</li>
@@ -185,6 +123,8 @@ useEffect(() => {
             whileHover="hovered"
             initial="rest"
             animate="rest"
+            onClick={() => navigate(card.path)}
+            style={{ cursor: "pointer" }}
           >
             <motion.img
               src={card.img}
@@ -202,6 +142,7 @@ useEffect(() => {
             <p className="card-description">{card.description}</p>
           </motion.div>
         ))}
+
         </div>
 
 

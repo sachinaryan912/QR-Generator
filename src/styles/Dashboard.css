@@ -22,6 +22,17 @@ body {
   transition: all 0.3s ease;
 }
 
+.popup-link {
+  color: #ffd700;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.popup-link:hover {
+  text-decoration: underline;
+}
+
+
 .dashboard-intro h2 {
   font-size: 2rem;
   color: #ffe28a;
