@@ -1,21 +1,24 @@
 import React, { useState } from "react";
-import FancyQRCode from "./components/FancyQRCode";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import LandingPage from "./pages/LandingPage"; // adjust if it's in another folder
+import Generator from "./pages/Generator";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 import "./App.css";
+import Dashboard from "./pages/Dashboard";
 
 function App() {
   const [link, setLink] = useState("");
 
   return (
-    <div className="app">
-      <h1 className="title">QR Code Generator</h1>
-      <input
-        className="input"
-        placeholder="Paste your link here..."
-        value={link}
-        onChange={(e) => setLink(e.target.value)}
-      />
-      {link && <FancyQRCode url={link} />}
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/home" element={<Dashboard />} />
+      </Routes>
+    </Router>
   );
 }
 

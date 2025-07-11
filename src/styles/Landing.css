@@ -1,0 +1,138 @@
+/* Landing.css */
+
+.landing-container {
+  position: relative;
+  min-height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.landing-overlay {
+  background: rgba(0, 0, 0, 0.75);
+  /* width: 100%; */
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #f5d442;
+}
+
+.landing-content {
+  text-align: center;
+  margin-top: 5vh;
+  max-width: 700px;
+  /* background: rgba(20, 20, 20, 0.5); */
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  /* backdrop-filter: blur(10px); */
+}
+
+.landing-title {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #f5d442;
+}
+
+.landing-subtitle {
+  font-size: 1.3rem;
+  color: #ffffff;
+  margin-bottom: 2rem;
+}
+
+.landing-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn-primary,
+.btn-outline {
+  padding: 0.8rem 1.8rem;
+  border-radius: 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #f5d442, #ffa500);
+  color: #000;
+  border: none;
+}
+
+.btn-primary:hover {
+  transform: scale(1.03);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid #ffa500;
+  color: #ffa500;
+}
+
+.btn-outline:hover {
+  background: #ffa500;
+  color: #000;
+  transform: scale(1.03);
+}
+
+.info-section {
+  margin-top: 3rem;
+  background-color: rgba(15, 15, 15, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 850px;
+  width: 100%;
+  color: #fff;
+}
+
+.info-section h2 {
+  color: #f5d442;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.info-section h3 {
+  color: #ffa500;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.info-section p,
+.info-section ul {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.info-section ul {
+  list-style-type: "– ";
+  padding-left: 1.5rem;
+}
+
+.landing-footer {
+  text-align: center;
+  margin-top: 3rem;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .landing-title {
+    font-size: 2.5rem;
+  }
+
+  .landing-subtitle {
+    font-size: 1rem;
+  }
+
+  .info-section {
+    padding: 1.5rem;
+  }
+}

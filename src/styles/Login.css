@@ -1,0 +1,147 @@
+/* src/styles/login.css */
+
+.login-bg {
+    background: no-repeat center center / cover;
+    min-height: 100vh;
+    position: relative;
+    font-family: 'SF Pro Display', -apple-system, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .overlay {
+    background: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+  
+  .auth-container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 2rem;
+  }
+  
+  .auth-box {
+    max-width: 420px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    border-radius: 18px;
+    padding: 2.5rem;
+    color: #e7bc00;
+    /* box-shadow: 0 0 20px rgba(255, 215, 0, 0.2); */
+  }
+  
+  .auth-box h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .auth-box .gold {
+    color: #e7bc00;
+  }
+  
+  .auth-box form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .auth-box input {
+    padding: 1rem 1rem;
+    border-radius: 12px;
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+  }
+  
+  .auth-box input::placeholder {
+    color: #ccc;
+  }
+  
+  .auth-box .loginBtn {
+    padding: 1rem 1rem;
+    border-radius: 12px;
+    border: none;
+    background: linear-gradient(135deg, #e7bc00, #ffc107);
+    color: #000;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+.loginBtn:hover {
+    transform: scale(1.02);
+  }
+
+
+  .regBtn {
+    padding: 1rem 1rem;
+    border-radius: 12px;
+    border: none;
+    background: linear-gradient(135deg, #e7bc00, #ffc107);
+    color: #000;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+.regBtn:hover {
+    transform: scale(1.02);
+  }
+  
+  .google-btn {
+    padding: 1rem 1rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    color: #e7bc00;
+    border: 1px solid #e7bc00;
+    margin-top: 0.5rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .google-btn img {
+    width: 20px;
+    height: 20px;
+    margin-right: 0.5rem;
+  }
+  
+  .google-btn:hover {
+    background: rgba(255, 76, 76, 0.1);
+  }
+  
+  .error {
+    color: #ff4c4c;
+    font-size: 0.85rem;
+    text-align: center;
+    margin-top: 0.5rem;
+  }
+  
+  .redirect {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #ccc;
+  }
+  
+  .redirect span {
+    color: #e7bc00;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  
