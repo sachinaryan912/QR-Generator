@@ -1,72 +1,74 @@
-# Getting Started with Create React App
+# 🧿 PixQR - Smart QR Code Generator
 
-![Screenshot 2025-07-06 at 7 37 05 PM](https://github.com/user-attachments/assets/b4a4fc66-cb2a-4b2d-9e3a-bb7cf7792385)
+<img width="230" height="230" alt="Screenshot 2025-07-11 at 10 43 38 AM" src="https://github.com/user-attachments/assets/91508e6d-a0df-4d2b-8e31-eb8b69c7775d" /></br>
+PixQR is a sleek, modern, and customizable QR code generator web app built with **React.js**, **Firebase**, and **Framer Motion**. It allows users to generate stunning QR codes with options for customization, including logo embedding, background gradients, and color schemes. It features a beautiful dashboard, real-time data storage, and tier-based user access.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 🔗 Live Demo
 
-## Available Scripts
+Visit the live app: [https://pixqr.online](https://pixqr.online)
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## ✨ Screenshots
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<img width="1139" height="642" alt="Screenshot 2025-07-11 at 10 43 38 AM" src="https://github.com/user-attachments/assets/716a36dc-60df-4fab-a25f-8aa7f2c516ff" />
+<img width="1089" height="643" alt="Screenshot 2025-07-11 at 10 47 44 AM" src="https://github.com/user-attachments/assets/8991da18-b568-4dfd-a681-e447149eba8c" />
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## ✨ Features
 
-### `npm run build`
+### ✅ Free Tier
+- Generate QR codes for:
+  - URL
+  - Text
+  - Email
+  - SMS
+  - Wifi
+  - vCard
+  - Location
+- Basic color customization
+- Download QR as PNG
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 👑 Premium Tier *(One-time payment)*
+- Upload custom logos inside QR
+- Add background images
+- Use gradient and advanced color combinations
+- Brand-focused styling
+- Premium badge in dashboard
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 🔒 User Authentication
+- Firebase Authentication (Email/Password)
+- User metadata: token count, join date, level
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 📊 Dashboard
+- Responsive black-golden glassmorphic theme
+- Animated QR type cards
+- User dropdown with:
+  - Level
+  - User since
+  - Logout
+- Token usage display
+- Pages for each QR type generator
 
-### `npm run eject`
+### ⚙️ Tech Stack
+- **Frontend:** React.js, Tailwind CSS, Framer Motion
+- **Backend:** Firebase Realtime Database, Firebase Auth
+- **Other Libraries:** `react-icons`, `qrcode.react`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 📁 Project Structure
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```bash
+PixQR/
+├── public/
+├── src/
+│   ├── components/        # Reusable UI components (Navbar, Cards)
+│   ├── pages/             # Dashboard and Generator Pages
+│   ├── context/           # Auth context provider
+│   ├── firebase.js        # Firebase configuration
+│   └── App.jsx            # Main app entry
+├── tailwind.config.js
+├── package.json
+└── README.md
