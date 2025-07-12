@@ -1,0 +1,73 @@
+/* src/styles/HowItWorks.css */
+
+.timeline-section {
+    padding: 3rem 1rem;
+    background: rgba(255, 255, 255, 0.015);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    max-width: 900px;
+    margin: 0 auto;
+    color: #fff;
+  }
+  
+  .timeline-title {
+    text-align: center;
+    color: #f5d442;
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding-left: 2rem;
+    border-left: 2px solid #f5d44255;
+  }
+  
+  .timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+    padding-left: 1rem;
+  }
+  
+  .timeline-dot {
+    position: absolute;
+    left: -11px;
+    top: 5px;
+    width: 18px;
+    height: 18px;
+    background: #f5d442;
+    border-radius: 50%;
+    border: 2px solid #000;
+    box-shadow: 0 0 10px #f5d44299;
+  }
+  
+  .timeline-content h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #f5d442;
+  }
+  
+  .timeline-content p {
+    margin: 0.3rem 0 0;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #ccc;
+  }
+  
+  /* Responsive */
+  @media (max-width: 600px) {
+    .timeline-section {
+      padding: 2rem 1rem;
+    }
+  
+    .timeline-content h3 {
+      font-size: 1rem;
+    }
+  
+    .timeline-content p {
+      font-size: 0.95rem;
+    }
+  }
+  

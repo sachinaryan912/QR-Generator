@@ -13,6 +13,7 @@ import WiFiQRPage from "./pages/WiFiQRPage";
 import VCardQRPage from "./pages/VCardQRPage";
 import SmsQRPage from "./pages/SmsQRPage";
 import LocationQRPage from "./pages/LocationQRPage";
+import QRGenerator from "./components/QRGenerator"; // adjust if it's in another folder
 
 function App() {
   const [link, setLink] = useState("");
@@ -22,6 +23,7 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/fancy" element={<QRGenerator />} />
         <Route path="/register" element={<Register />} />
         <Route path="/home" element={<Dashboard />} />
         <Route path="/generate/url" element={<UrlQRPage />} />

@@ -1,0 +1,16 @@
+@keyframes bounce {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
+  }
+  
+  .launch-dialog .MuiPaper-root {
+    border-radius: 0px;
+    box-shadow: 0 0 30px rgba(245, 212, 66, 0.158);
+    padding: 1rem;
+    max-width: 480px;
+    text-align: center;
+  }
+  
+
+  

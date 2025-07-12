@@ -1,0 +1,15 @@
+.wide-footer {
+    margin-top: 4rem;
+    padding: 3rem 1rem;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.02);
+    text-align: center;
+    color: #aaa;
+    font-size: 0.9rem;
+  }
+  .wide-footer a {
+    color: #f5d442;
+    text-decoration: none;
+    margin: 0 0.5rem;
+  }
+  
