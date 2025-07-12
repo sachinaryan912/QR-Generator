@@ -1,6 +1,6 @@
 # 🧿 PixQR - Smart QR Code Generator
 
-<img width="230" height="230" alt="Screenshot 2025-07-11 at 10 43 38 AM" src="https://github.com/user-attachments/assets/91508e6d-a0df-4d2b-8e31-eb8b69c7775d" /></br>
+<img width="230" height="230" alt="Screenshot 2025-07-11 at 10 43 38 AM" src="https://github.com/user-attachments/assets/76d799ee-dfe2-4e6e-ac5b-334e43e0a389" /></br>
 PixQR is a sleek, modern, and customizable QR code generator web app built with **React.js**, **Firebase**, and **Framer Motion**. It allows users to generate stunning QR codes with options for customization, including logo embedding, background gradients, and color schemes. It features a beautiful dashboard, real-time data storage, and tier-based user access.
 
 ## 🔗 Live Demo
@@ -10,6 +10,7 @@ Visit the live app: [https://pixqr.online](https://pixqr.online)
 ---
 
 ## ✨ Screenshots
+
 
 <img width="1139" height="642" alt="Screenshot 2025-07-11 at 10 43 38 AM" src="https://github.com/user-attachments/assets/716a36dc-60df-4fab-a25f-8aa7f2c516ff" />
 <img width="1089" height="643" alt="Screenshot 2025-07-11 at 10 47 44 AM" src="https://github.com/user-attachments/assets/8991da18-b568-4dfd-a681-e447149eba8c" />
