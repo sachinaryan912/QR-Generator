@@ -129,7 +129,7 @@
   display: flex;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 999px;
+  /* border-radius: 999px; */
   padding: 4px;
   gap: 4px;
   backdrop-filter: blur(12px);
@@ -143,7 +143,7 @@
   padding: 0.5rem 1.2rem;
   border: none;
   background: transparent;
-  border-radius: 999px;
+  /* border-radius: 999px; */
   color: #f5d442;
   font-size: 1rem;
   cursor: pointer;
@@ -166,7 +166,7 @@
   height: 100%;
   width: 100%;
   background: #f5d442;
-  border-radius: 999px;
+  /* border-radius: 999px; */
   z-index: -1;
 }
 
@@ -192,16 +192,6 @@
 }
 
 
-.qr-gen-section{
-  background: rgba(255, 255, 255, 0.02);
-  border-radius: 0px;
-  padding: 2rem;
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  color: #fff;
-}
-
-
 
 
 
@@ -212,6 +202,12 @@
   padding: 2rem;
   width: 100%;
   max-width: 900px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 0px;
+  padding: 2rem;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #fff;
 }
 
 .section-title {
@@ -284,7 +280,7 @@
 .feature-box {
   flex: 1 1 300px;
   padding: 1.5rem;
-  border-radius: 16px;
+  /* border-radius: 16px; */
   background: rgba(255, 255, 255, 0.02);
   backdrop-filter: blur(8px);
   color: #fff;
@@ -319,7 +315,7 @@
   transform: translateX(-50%);
   background: #f5d442;
   color: #000;
-  border-radius: 50%;
+  /* border-radius: 50%; */
   font-size: 1.2rem;
   padding: 0.4rem 0.7rem;
   box-shadow: 0 0 12px #f5d44288;

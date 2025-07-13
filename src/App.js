@@ -1,19 +1,17 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import LandingPage from "./pages/LandingPage"; // adjust if it's in another folder
-import Generator from "./pages/Generator";
+import LandingPage from "./pages/LandingPage";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import "./App.css";
 import Dashboard from "./pages/Dashboard";
-import UrlQRPage from "./pages/UrlQRPage";
-import TextQRPage from "./pages/TextQRPage";
-import EmailQRPage from "./pages/EmailQRPage";
-import WiFiQRPage from "./pages/WiFiQRPage";
-import VCardQRPage from "./pages/VCardQRPage";
-import SmsQRPage from "./pages/SmsQRPage";
-import LocationQRPage from "./pages/LocationQRPage";
-import QRGenerator from "./components/QRGenerator"; // adjust if it's in another folder
+import UrlQRPage from "./pages/subpages/UrlQRPage";
+import TextQRPage from "./pages/subpages/TextQRPage";
+import EmailQRPage from "./pages/subpages/EmailQRPage";
+import WiFiQRPage from "./pages/subpages/WiFiQRPage";
+import VCardQRPage from "./pages/subpages/VCardQRPage";
+import SmsQRPage from "./pages/subpages/SmsQRPage";
+import LocationQRPage from "./pages/subpages/LocationQRPage";
 
 function App() {
   const [link, setLink] = useState("");
@@ -23,7 +21,6 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/fancy" element={<QRGenerator />} />
         <Route path="/register" element={<Register />} />
         <Route path="/home" element={<Dashboard />} />
         <Route path="/generate/url" element={<UrlQRPage />} />
