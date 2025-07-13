@@ -1,0 +1,10 @@
+URL functionality : 
+
+1. qr shape changes  - like circle, square , rounded
+2. qr color customization - plain color
+3. qr gradient color
+4. 4 category [ insta, facebook, linkedin , twitter] other urls
+5. brand logo upload customization
+6. toggle to remove watermark
+
+OPTIONAL : track qr

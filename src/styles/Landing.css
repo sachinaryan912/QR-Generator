@@ -199,7 +199,6 @@
 .qr-gen-section {
   margin-top: 3rem;
   text-align: center;
-  padding: 2rem;
   width: 100%;
   max-width: 70dvw;
   background: rgba(255, 255, 255, 0.02);
@@ -217,9 +216,7 @@
 }
 
 .qr-form-container {
-  /* background: rgba(255, 255, 255, 0.02); */
   border-radius: 16px;
-  padding: 2rem;
   color: #fff;
 }
 

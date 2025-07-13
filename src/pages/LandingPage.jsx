@@ -1,6 +1,6 @@
 // LandingPage.jsx
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect ,useRef} from "react";
 import "../styles/Landing.css";
 import { Helmet } from "react-helmet";
 import { useNavigate } from "react-router-dom";
@@ -22,10 +22,14 @@ const tabOptions = [
   { label: "vCard", icon: <FaUserAlt /> },
 ];
 
+
+
 const LandingPage = () => {
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState("URL");
   const [showDialog, setShowDialog] = useState(false);
+
+  const qrSectionRef = useRef(null);
 
 useEffect(() => {
   const timer = setTimeout(() => {
@@ -99,11 +103,14 @@ useEffect(() => {
   </p>
 
   <div className="landing-buttons">
-    <button className="btn-filled" onClick={() => navigate("/generate")}>
+    {/* TODO : add scroll navigation */}
+    <button className="btn-filled" onClick={() => {
+    qrSectionRef.current?.scrollIntoView({ behavior: "smooth" });
+  }}>
       <img src="/assets/qr-code-black.png" alt="Generate QR" className="btn-icon-img" style={{color: "white"}}/>
       <span>Generate QR</span>
     </button>
-    <button className="btn-outline-golden">
+    <button className="btn-outline-golden" onClick={() => navigate("/login")}>
       <img src="/assets/join-ic.png" alt="Scan QR" className="btn-icon-img" />
       <span>Sign up free</span>
     </button>
@@ -113,7 +120,7 @@ useEffect(() => {
 
 
     {/* 🟡 QR Generator Tabs Section */}
-<div className="qr-gen-section">
+<div className="qr-gen-section" ref={qrSectionRef}>
   <h2 className="section-title">Generate Free QR Instantly</h2>
 
   {/* Animated iOS-Style Tab Buttons */}
