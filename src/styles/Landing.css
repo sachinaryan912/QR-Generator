@@ -201,7 +201,7 @@
   text-align: center;
   padding: 2rem;
   width: 100%;
-  max-width: 900px;
+  max-width: 70dvw;
   background: rgba(255, 255, 255, 0.02);
   border-radius: 0px;
   padding: 2rem;
@@ -330,6 +330,10 @@
   .features-container {
     flex-direction: column;
     gap: 1.5rem;
+  }
+
+  .qr-gen-section{
+    width: 100%;
   }
 }
 
