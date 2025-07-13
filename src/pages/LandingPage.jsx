@@ -10,6 +10,8 @@ import Footer from "../components/Footer";
 import { motion, AnimatePresence } from "framer-motion";
 import HowItWorks from "../components/HowItWorks";
 import ComingSoonDialog from "../components/ComingSoonDialog";
+import QRGenerator from "../components/QRGenerator";
+// import QRGenerator from "../components/QRGenerator";
 
 
 
@@ -155,7 +157,8 @@ useEffect(() => {
     >
       <div className="qr-form-container">
         <h3>{activeTab} QR Generator Form</h3>
-        <p>This is a placeholder form for {activeTab} generation.</p>
+        {/* <p>This is a placeholder form for {activeTab} generation.</p> */}
+        <QRGenerator qrType={activeTab}/>
       </div>
     </motion.div>
   </AnimatePresence>

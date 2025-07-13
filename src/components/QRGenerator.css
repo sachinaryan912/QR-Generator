@@ -1,0 +1,112 @@
+/* Outer container */
+.qr-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+
+/* Title */
+.qr-title {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+  color: #f5d442;
+}
+
+/* Main QR card */
+.qr-card {
+  background: #2a2a2a;
+  padding: 2rem;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 800px;
+  box-shadow: 0 0 10px rgba(245, 212, 66, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Wrapper for two sections */
+.qr-cards-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .qr-cards-wrapper {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+/* Input Section Card */
+.qr-card-section {
+  background: #1a1a1a;
+  border-radius: 12px;
+  padding: 1rem;
+  flex: 1;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.05);
+}
+
+/* Label */
+.input-label {
+  display: block;
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-bottom: 0.5rem;
+}
+
+/* Input field */
+.qr-input {
+  width: 90%;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 8px;
+  background: #333;
+  color: #fff;
+  font-size: 1rem;
+}
+
+/* QR Code display */
+.qr-display-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  position: relative;
+}
+
+/* QR Placeholder */
+.qr-placeholder {
+  color: #999;
+  font-style: italic;
+}
+
+/* Centered logo inside QR */
+.qr-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 36px;
+  height: 36px;
+}
+
+/* Save button */
+.qr-download {
+  margin-top: 2rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #f5d442;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.qr-download:hover {
+  background-color: #e0c63d;
+}

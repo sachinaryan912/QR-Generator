@@ -11,11 +11,11 @@ const qrCode = new QRCodeStyling({
   data: "https://aryantechworld.com",
   image: "/logo.png", // Your logo path
   dotsOptions: {
-    color: "#00f5d4",
+    color: "#f5d442",
     type: "rounded",
   },
   cornersSquareOptions: {
-    color: "#00f5d4",
+    color: "#f5d442",
     type: "extra-rounded",
   },
   backgroundOptions: {
