@@ -4,7 +4,6 @@ import { Helmet } from 'react-helmet';
 import '../styles/Blog.css';
 import blogData from '../data/BlogData';
 import { Link } from 'react-router-dom';
-import Simple_Navbar from '../components/Simple_Navbar';
 
 const Blog = () => {
   return (

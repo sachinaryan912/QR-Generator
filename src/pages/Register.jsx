@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import "../styles/Login.css"; // reuse login.css
 import { Helmet } from "react-helmet"; // for SEO
-import Simple_Navbar from "../components/Simple_Navbar";
+import SimpleNavbar from "../components/Simple_Navbar";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -83,7 +83,7 @@ const Register = () => {
   <meta name="twitter:site" content="@pixqr" />
 </Helmet>
 
-<Simple_Navbar />
+<SimpleNavbar />
     <div className="login-bg" style={{ backgroundImage: `url('/assets/qr-bg2.jpeg')` }}>
       <div className="overlay" />
       <motion.div
