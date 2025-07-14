@@ -1,0 +1,61 @@
+/* src/pages/NotFound.css */
+
+.notfound-container {
+    min-height: 100vh;
+    background-color: #0a0a0a;
+    color: #f6e27f;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    text-align: center;
+    animation: fadeIn 0.6s ease-in-out;
+  }
+  
+  .notfound-image {
+    min-width: 200px;
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .notfound-title {
+    font-size: 5rem;
+    font-weight: bold;
+    color: #ffd700;
+    text-shadow: 0 0 20px #ffd70088;
+  }
+  
+  .notfound-text {
+    font-size: 1.25rem;
+    color: #e4c663;
+  }
+  
+  .notfound-link {
+    font-size: 1.1rem;
+    color: #ffcc00;
+    text-decoration: underline;
+    transition: 0.3s ease;
+  }
+  
+  .notfound-link:hover {
+    color: #fff;
+    text-shadow: 0 0 10px #ffd700;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+  }
+  

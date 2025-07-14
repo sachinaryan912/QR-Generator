@@ -18,6 +18,7 @@ import AboutUs from "./pages/AboutUs";
 import Blog from "./pages/Blog";
 import BlogPage from "./pages/subpages/BlogPage";
 import NotFound from "./pages/NotFound";
+import TaskBoard from "./pages/TaskBoard";
 
 function App() {
 
@@ -41,6 +42,7 @@ function App() {
         <Route path="/blogs" element={<Blog />} />
         <Route path="/blog/:slug" element={<BlogPage />} />
         <Route path="*" element={<NotFound />} />
+        <Route path="/tasks" element={<TaskBoard />} />
         {/* <Route path="/image" element={<ImageEncoder />} /> */}
 
       </Routes>
