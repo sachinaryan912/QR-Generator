@@ -1,5 +1,5 @@
-import React, { useEffect, useState, useRef } from "react";
-import { signOut, onAuthStateChanged } from "firebase/auth";
+import React, { useEffect, useState } from "react";
+import {  onAuthStateChanged } from "firebase/auth";
 import { auth, database } from "../firebase";
 import { ref, get } from "firebase/database";
 import { useNavigate } from "react-router-dom";
@@ -12,9 +12,6 @@ import { Helmet } from "react-helmet"; // for SEO
 const Dashboard = () => {
   const navigate = useNavigate();
   const [userData, setUserData] = useState(null);
-  const [showPopup, setShowPopup] = useState(false);
-  const popupRef = useRef();
-  const [menuOpen, setMenuOpen] = useState(false);
   const [showList, setShowList] = useState(true);
 const [isMobile, setIsMobile] = useState(false);
 
@@ -26,9 +23,7 @@ useEffect(() => {
   return () => window.removeEventListener("resize", checkMobile);
 }, []);
 
-useEffect(() => {
-  if (!isMobile) {setShowList(true); setMenuOpen(false)};
-}, [isMobile]);
+
 
 const cardData = [
   { title: "URL", description: "Redirect users to any website", img: "/assets/URL.png", path: "/generate/url" },
@@ -56,21 +51,7 @@ const cardData = [
     return () => unsubscribe();
   }, [navigate]);
 
-  // ✅ Detect click outside
-  useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (popupRef.current && !popupRef.current.contains(e.target)) {
-        setShowPopup(false);
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
 
-  const handleLogout = async () => {
-    await signOut(auth);
-    navigate("/login");
-  };
 
   if (!userData) {
     return <Loader text="Please wait! Fetching data..."/>;
