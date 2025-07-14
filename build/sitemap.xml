@@ -8,22 +8,21 @@
   <!-- Homepage -->
   <url>
     <loc>https://pixqr.online/</loc>
-    <lastmod>2025-07-09</lastmod>
+    <lastmod>2025-07-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.00</priority>
   </url>
 
-  <!-- Authentication -->
+  <!-- Auth Pages -->
   <url>
     <loc>https://pixqr.online/login</loc>
-    <lastmod>2025-07-09</lastmod>
+    <lastmod>2025-07-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
-
   <url>
     <loc>https://pixqr.online/register</loc>
-    <lastmod>2025-07-09</lastmod>
+    <lastmod>2025-07-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
@@ -31,59 +30,112 @@
   <!-- Dashboard -->
   <url>
     <loc>https://pixqr.online/home</loc>
-    <lastmod>2025-07-09</lastmod>
+    <lastmod>2025-07-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
 
-  <!-- QR Generators -->
+  <!-- QR Generator Tools -->
   <url>
     <loc>https://pixqr.online/generate/url</loc>
-    <lastmod>2025-07-09</lastmod>
+    <lastmod>2025-07-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
-
   <url>
     <loc>https://pixqr.online/generate/text</loc>
-    <lastmod>2025-07-09</lastmod>
+    <lastmod>2025-07-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
-
   <url>
     <loc>https://pixqr.online/generate/email</loc>
-    <lastmod>2025-07-09</lastmod>
+    <lastmod>2025-07-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
-
   <url>
     <loc>https://pixqr.online/generate/wifi</loc>
-    <lastmod>2025-07-09</lastmod>
+    <lastmod>2025-07-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
-
   <url>
     <loc>https://pixqr.online/generate/vcard</loc>
-    <lastmod>2025-07-09</lastmod>
+    <lastmod>2025-07-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
-
   <url>
     <loc>https://pixqr.online/generate/sms</loc>
-    <lastmod>2025-07-09</lastmod>
+    <lastmod>2025-07-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://pixqr.online/generate/location</loc>
+    <lastmod>2025-07-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
 
+  <!-- Legal Pages -->
   <url>
-    <loc>https://pixqr.online/generate/location</loc>
-    <lastmod>2025-07-09</lastmod>
+    <loc>https://pixqr.online/terms</loc>
+    <lastmod>2025-07-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.60</priority>
+  </url>
+  <url>
+    <loc>https://pixqr.online/privacy-policy</loc>
+    <lastmod>2025-07-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.60</priority>
+  </url>
+
+  <!-- About -->
+  <url>
+    <loc>https://pixqr.online/about</loc>
+    <lastmod>2025-07-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.60</priority>
+  </url>
+
+  <!-- Blog Index -->
+  <url>
+    <loc>https://pixqr.online/blogs</loc>
+    <lastmod>2025-07-14</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Sample Blog Posts (manually or via dynamic generation script) -->
+  <url>
+    <loc>https://pixqr.online/blog/top-10-uses-of-qr-codes-2025</loc>
+    <lastmod>2025-07-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <url>
+    <loc>https://pixqr.online/blog/create-upi-qr-code</loc>
+    <lastmod>2025-07-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <url>
+    <loc>https://pixqr.online/blog/custom-qr-code-design</loc>
+    <lastmod>2025-07-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <url>
+    <loc>https://pixqr.online/blog/free-vs-premium-qr-generator</loc>
+    <lastmod>2025-07-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
   </url>
 
 </urlset>
