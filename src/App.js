@@ -18,6 +18,7 @@ import AboutUs from "./pages/AboutUs";
 import ImageEncoder from "./backup_files/ImageEncoder";
 import Blog from "./pages/Blog";
 import BlogPage from "./pages/subpages/BlogPage";
+import NotFound from "./pages/NotFound";
 
 function App() {
   const [link, setLink] = useState("");
@@ -41,6 +42,7 @@ function App() {
         <Route path="/about" element={<AboutUs />} />
         <Route path="/blogs" element={<Blog />} />
         <Route path="/blog/:slug" element={<BlogPage />} />
+        <Route path="*" element={<NotFound />} />
         {/* <Route path="/image" element={<ImageEncoder />} /> */}
 
       </Routes>
