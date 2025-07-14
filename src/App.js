@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LandingPage from "./pages/LandingPage";
 import Login from "./pages/Login";
@@ -15,13 +15,11 @@ import LocationQRPage from "./pages/subpages/LocationQRPage";
 import TermsAndConditions from "./pages/TermsAndConditions";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import AboutUs from "./pages/AboutUs";
-import ImageEncoder from "./backup_files/ImageEncoder";
 import Blog from "./pages/Blog";
 import BlogPage from "./pages/subpages/BlogPage";
 import NotFound from "./pages/NotFound";
 
 function App() {
-  const [link, setLink] = useState("");
 
   return (
     <Router>

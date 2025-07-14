@@ -12,7 +12,7 @@ import "../styles/Login.css";
 import googleIcon from "../assets/google-ic.png";
 import Loader from "../components/Loader"; // ✅ Import loader
 import { Helmet } from "react-helmet";
-import Simple_Navbar from "../components/Simple_Navbar";
+import SimpleNavbar from "../components/Simple_Navbar";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -110,7 +110,7 @@ const Login = () => {
   <meta name="twitter:site" content="@pixqr" />
 </Helmet>
 
-<Simple_Navbar />
+<SimpleNavbar />
 
 <div
       className="login-bg"

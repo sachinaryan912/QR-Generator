@@ -3,9 +3,8 @@ import { signOut, onAuthStateChanged } from "firebase/auth";
 import { auth, database } from "../firebase";
 import { ref, get } from "firebase/database";
 import { useNavigate } from "react-router-dom";
-import { FaBolt, FaChevronDown, FaBars, FaTimes } from "react-icons/fa";
 import "../styles/Dashboard.css";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
 import Loader from "../components/Loader";
 import { Helmet } from "react-helmet"; // for SEO
