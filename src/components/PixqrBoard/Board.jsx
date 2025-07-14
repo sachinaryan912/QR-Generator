@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { DragDropContext } from "react-beautiful-dnd";
+import { DragDropContext} from "@hello-pangea/dnd";
+
 import Column from "./Column";
 import AddUserModal from "./AddUserModal";
 import { database } from "../../firebase";

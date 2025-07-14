@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Droppable } from "react-beautiful-dnd";
+import { Droppable } from "@hello-pangea/dnd";
+
 import TaskCard from "./TaskCard";
 import AddTaskModal from "./AddTaskModal";
 
