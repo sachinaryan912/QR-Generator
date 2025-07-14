@@ -1,0 +1,23 @@
+.simple-navbar {
+    background-color: transparent;
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    position: absolute;
+    margin: 0 10dvw;
+  }
+  
+  .navbar-logo {
+    height: 32px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  .navbar-logo:hover {
+    transform: scale(1.05);
+  }
+  

@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import "../styles/Login.css"; // reuse login.css
 import { Helmet } from "react-helmet"; // for SEO
+import Simple_Navbar from "../components/Simple_Navbar";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -49,31 +50,40 @@ const Register = () => {
   <title>Register | PixQR - Create Your Free Account</title>
   <meta
     name="description"
-    content="Join PixQR and start generating stylish QR codes. Register for free to access secure and premium QR features including vCard, SMS, Wi-Fi, and more."
+    content="Join PixQR and start generating stylish QR codes. Register for free to access secure and premium QR features including vCard, SMS, Wi-Fi, UPI, logos, and more."
   />
   <meta
     name="keywords"
-    content="PixQR register, create QR account, sign up PixQR, generate QR codes, QR signup, register free QR generator"
+    content="PixQR register, create QR account, sign up PixQR, register QR code generator, generate QR codes, QR signup, QR code with logo, free QR code generator, QR code scanner, UPI QR code, business card QR, QR code generator login, bulk QR code generator"
   />
   <meta name="robots" content="index, follow" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="canonical" href="https://pixqr.online/register" />
 
-  {/* Open Graph */}
-  <meta property="og:title" content="Register | PixQR" />
-  <meta property="og:description" content="Create your free PixQR account to design secure and professional QR codes in seconds." />
+  {/* Open Graph (for LinkedIn, Facebook, WhatsApp, etc.) */}
+  <meta property="og:title" content="Register | PixQR - Create Your Free Account" />
+  <meta property="og:description" content="Create your free PixQR account and start generating secure, customizable QR codes with logos, UPI, vCard, and more. No design skills needed." />
   <meta property="og:url" content="https://pixqr.online/register" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://pixqr.online/assets/preview-banner.png" />
+  <meta property="og:site_name" content="PixQR" />
+  <meta property="og:locale" content="en_US" />
+
+  {/* LinkedIn */}
+  <meta name="linkedin:owner" content="https://www.linkedin.com/company/pixqr/" />
+
+  {/* Instagram (for profile context in some apps) */}
+  <meta property="instapp:owner_user" content="https://www.instagram.com/pixqr.official/" />
 
   {/* Twitter Card */}
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Register | PixQR - Create Free Account" />
-  <meta name="twitter:description" content="Sign up to unlock PixQR features and start generating beautiful, secure QR codes instantly." />
+  <meta name="twitter:description" content="Sign up and unlock PixQR's free and premium QR code generator. Add logos, business info, Wi-Fi, SMS, and more." />
   <meta name="twitter:image" content="https://pixqr.online/assets/preview-banner.png" />
+  <meta name="twitter:site" content="@pixqr" />
 </Helmet>
 
-    
+<Simple_Navbar />
     <div className="login-bg" style={{ backgroundImage: `url('/assets/qr-bg2.jpeg')` }}>
       <div className="overlay" />
       <motion.div

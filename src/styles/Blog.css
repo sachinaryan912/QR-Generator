@@ -1,0 +1,94 @@
+/* src/components/Blog.css */
+
+.blog-container {
+    padding: 3rem 2rem;
+    color: #fff;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    margin: 0 10dvw;
+  }
+  
+  .blog-title {
+    font-size: 3rem;
+    text-align: center;
+    color: gold;
+    margin-bottom: 0.2rem;
+  }
+  
+  .blog-subtitle {
+    text-align: center;
+    color: #bbb;
+    margin-bottom: 3rem;
+  }
+  
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+  }
+  
+  .blog-card {
+    background: linear-gradient(145deg, #1e1e1e, #151515);
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    box-shadow: 0 0 25px rgba(255, 217, 0, 0.06);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+  
+  .blog-card:hover {
+    transform: translateY(-8px);
+  }
+  
+  .blog-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .blog-card-title {
+    font-size: 1.5rem;
+    color: gold;
+    margin: 1rem;
+  }
+  
+  .blog-snippet {
+    color: #ccc;
+    margin: 0 1rem 1rem 1rem;
+  }
+  
+  .read-more {
+    display: block;
+    margin: 0 1rem 1.5rem 1rem;
+    color: gold;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .read-more:hover {
+    color: #ffcc00;
+  }
+
+
+  .back-button {
+    background: transparent;
+    color: gold;
+    border: none;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  
+  .blog-detail .blog-image {
+    margin-bottom: 1.5rem;
+    border-radius: 10px;
+  }
+  
+  .blog-content {
+    color: #ddd;
+    font-size: 1.1rem;
+    line-height: 1.8;
+  }
+  
+  

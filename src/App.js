@@ -12,6 +12,12 @@ import WiFiQRPage from "./pages/subpages/WiFiQRPage";
 import VCardQRPage from "./pages/subpages/VCardQRPage";
 import SmsQRPage from "./pages/subpages/SmsQRPage";
 import LocationQRPage from "./pages/subpages/LocationQRPage";
+import TermsAndConditions from "./pages/TermsAndConditions";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import AboutUs from "./pages/AboutUs";
+import ImageEncoder from "./backup_files/ImageEncoder";
+import Blog from "./pages/Blog";
+import BlogPage from "./pages/subpages/BlogPage";
 
 function App() {
   const [link, setLink] = useState("");
@@ -30,6 +36,12 @@ function App() {
         <Route path="/generate/vcard" element={<VCardQRPage />} />
         <Route path="/generate/sms" element={<SmsQRPage />} />
         <Route path="/generate/location" element={<LocationQRPage />} />
+        <Route path="/terms" element={<TermsAndConditions />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/about" element={<AboutUs />} />
+        <Route path="/blogs" element={<Blog />} />
+        <Route path="/blog/:slug" element={<BlogPage />} />
+        {/* <Route path="/image" element={<ImageEncoder />} /> */}
 
       </Routes>
     </Router>

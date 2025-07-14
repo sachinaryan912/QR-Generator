@@ -12,6 +12,7 @@ import "../styles/Login.css";
 import googleIcon from "../assets/google-ic.png";
 import Loader from "../components/Loader"; // ✅ Import loader
 import { Helmet } from "react-helmet";
+import Simple_Navbar from "../components/Simple_Navbar";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -71,7 +72,8 @@ const Login = () => {
 
   return (
     <>
-    <Helmet>
+     
+     <Helmet>
   <title>Login | PixQR - Secure QR Code Generator</title>
   <meta
     name="description"
@@ -79,29 +81,42 @@ const Login = () => {
   />
   <meta
     name="keywords"
-    content="PixQR login, QR code generator login, secure QR login, access PixQR, generate QR code, login to PixQR"
+    content="PixQR login, QR code generator login, secure QR login, access PixQR, generate QR code, login to PixQR, free QR code generator, QR with logo, QR scanner, QR code design, QR code customization, QR code analytics, QR code tracking, QR code for business, QR code for events, QR code for marketing"
   />
   <meta name="robots" content="index, follow" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="canonical" href="https://pixqr.online/login" />
 
-  {/* Open Graph */}
+  {/* Open Graph (for Facebook, LinkedIn) */}
   <meta property="og:title" content="Login | PixQR" />
   <meta property="og:description" content="Login to your PixQR account to start generating personalized and encrypted QR codes." />
   <meta property="og:url" content="https://pixqr.online/login" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://pixqr.online/assets/preview-banner.png" />
+  <meta property="og:site_name" content="PixQR" />
+
+  {/* LinkedIn Specific */}
+  <meta property="og:locale" content="en_US" />
+  <meta name="linkedin:owner" content="https://www.linkedin.com/company/pixqr/" />
+
+  {/* Instagram Specific (not fully supported by Instagram, but helpful for previews on link embeds) */}
+  <meta property="instapp:owner_user" content="https://www.instagram.com/pixqr.official/" />
 
   {/* Twitter Card */}
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Login | PixQR - Secure QR Code Generator" />
   <meta name="twitter:description" content="Log in to access PixQR’s secure and stylish QR code generator with premium features." />
   <meta name="twitter:image" content="https://pixqr.online/assets/preview-banner.png" />
+  <meta name="twitter:site" content="@pixqr" />
 </Helmet>
+
+<Simple_Navbar />
+
 <div
       className="login-bg"
       style={{ backgroundImage: `url('/assets/qr-bg2.jpeg')` }}
     >
+     
       <div className="overlay" />
       <motion.div
         className="auth-container"
@@ -148,6 +163,8 @@ const Login = () => {
         </motion.div>
       </motion.div>
     </div>
+
+    
     
     </>
     

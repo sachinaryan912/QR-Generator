@@ -21,12 +21,12 @@ const Footer = () => (
           <h4>Company</h4>
           <a href="/about">About Us</a>
           <a href="/contact">Contact</a>
-          <a href="/careers">Careers</a>
+          <a href="/blogs">Blogs</a>
         </div>
         <div className="footer-col">
           <h4>Support</h4>
           <a href="/help">Help Center</a>
-          <a href="/privacy">Privacy Policy</a>
+          <a href="/privacy-policy">Privacy Policy</a>
           <a href="/terms">Terms & Conditions</a>
         </div>
       </div>

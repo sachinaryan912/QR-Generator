@@ -4,22 +4,25 @@ import React, { useState, useEffect ,useRef} from "react";
 import "../styles/Landing.css";
 import { Helmet } from "react-helmet";
 import { useNavigate } from "react-router-dom";
-import { FaQrcode, FaSearch, FaLink, FaSms, FaEnvelope, FaUserAlt } from "react-icons/fa";
+import { FaQrcode, FaSearch, FaLink, FaSms, FaEnvelope, FaUserAlt , FaMapMarkerAlt, FaWifi} from "react-icons/fa";
+import { FiLink,FiSave,FiFileText, FiDownload, FiUser, FiPhone, FiMail, FiBriefcase, FiMessageSquare } from "react-icons/fi";
 import FAQAccordion from "../components/FAQAccordion";
 import Footer from "../components/Footer";
 import { motion, AnimatePresence } from "framer-motion";
 import HowItWorks from "../components/HowItWorks";
 import ComingSoonDialog from "../components/ComingSoonDialog";
 import QRGenerator from "../components/QRGenerator";
-// import QRGenerator from "../components/QRGenerator";
 
 
 
 const tabOptions = [
   { label: "URL", icon: <FaLink /> },
-  { label: "Text", icon: <FaSms /> },
+  { label: "Text", icon: <FiFileText /> },
   { label: "Email", icon: <FaEnvelope /> },
   { label: "vCard", icon: <FaUserAlt /> },
+  { label: "Location", icon: <FaMapMarkerAlt /> },
+  { label: "SMS", icon: <FiMessageSquare /> },
+  { label: "WiFi", icon: <FaWifi /> },
 ];
 
 
@@ -43,48 +46,45 @@ useEffect(() => {
   return (
     <>
      <Helmet>
-  <title>PixQR | Free & Premium Smart QR Code Generator</title>
+  <title>PixQR | Smart, Stylish & Secure QR Code Generator</title>
 
   <meta
     name="description"
-    content="PixQR is a powerful online QR code generator to create beautiful, custom, and branded QR codes. Generate QR codes for URL, Wi-Fi, vCard, Text, and more. 100% secure and end-to-end encrypted."
+    content="PixQR is a powerful online QR code generator to create beautiful, custom, and branded QR codes. Generate QR codes for URL, Wi-Fi, vCard, Text, Email, Location, and more. 100% secure and end-to-end encrypted."
   />
 
   <meta
     name="keywords"
-    content="QR code generator, custom QR codes, create QR online, QR code for Wi-Fi, vCard QR, secure QR generator, branded QR codes, PixQR, pixar, QR code design, free QR codes, premium QR codes, online QR code maker, generate QR code, stylish QR codes"
+    content="QR code generator, free QR code generator, custom QR codes, QR code generator with logo, create QR online, Wi-Fi QR, vCard QR, secure QR generator, bulk QR code generator, UPI QR, QR code business card, PixQR, QR code login, Canva QR code, QR Code Monkey, stylish QR codes, QR code design, QR code branding, QR code for website, QR code for email, QR code for SMS, QR code for location, QR code for Wi-Fi, QR code for text, QR code for phone, QR code for business, QR code for marketing, QR code for social media, QR code for portfolio, QR code for product, QR code for event, QR code for restaurant, QR code for payment, QR code for contact, QR code for app download, QR code for lead generation, QR code for promotions, QR code for advertising, QR code for business card, QR code for digital marketing, QR code for e-commerce, QR code for real estate, QR code for education, QR code for healthcare, QR code for travel, QR code for hospitality"
   />
 
   <meta name="robots" content="index, follow" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="canonical" href="https://pixqr.online/" />
 
-  {/* Open Graph (Facebook, LinkedIn, etc.) */}
+  {/* Open Graph for Facebook, LinkedIn */}
   <meta property="og:title" content="PixQR | Smart QR Code Generator" />
   <meta
     property="og:description"
-    content="Create stunning QR codes with PixQR. Support for URL, Email, Wi-Fi, SMS, Location, vCard & more. Free and premium options."
+    content="Create stunning QR codes with PixQR. Supports URL, Wi-Fi, Email, SMS, Location, vCard & more. Free and premium options with branding and logo support."
   />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://pixqr.online/" />
   <meta property="og:image" content="https://pixqr.online/assets/preview-banner.png" />
-
-  {/* LinkedIn preview (uses Open Graph tags) */}
   <meta property="og:site_name" content="PixQR" />
   <meta property="og:locale" content="en_US" />
 
-  {/* Instagram does not read Open Graph metadata directly, but having canonical and image meta tags helps */}
-
-  {/* Twitter Cards */}
+  {/* Twitter Card */}
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="PixQR | Smart QR Code Generator" />
   <meta
     name="twitter:description"
-    content="Generate secure, stunning QR codes with PixQR. Simple. Stylish. Secure."
+    content="Generate secure, stunning QR codes with PixQR. Add logos, scan directly, and bulk generate. Simple. Stylish. Secure."
   />
   <meta name="twitter:image" content="https://pixqr.online/assets/preview-banner.png" />
+  <meta name="twitter:site" content="@pixqr" />
 
-  {/* Social Profile Links */}
+  {/* Social Identity Links */}
   <link rel="me" href="https://www.linkedin.com/company/pixqr" />
   <link rel="me" href="https://www.instagram.com/pixqr.online" />
 </Helmet>
@@ -163,7 +163,7 @@ useEffect(() => {
       transition={{ duration: 0.4, ease: "easeInOut" }}
     >
       <div className="qr-form-container">
-        <h3>{activeTab} QR Generator Form</h3>
+      
         {/* <p>This is a placeholder form for {activeTab} generation.</p> */}
         <QRGenerator qrType={activeTab}/>
       </div>
