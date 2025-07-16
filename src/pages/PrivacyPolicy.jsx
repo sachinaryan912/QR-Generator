@@ -17,6 +17,17 @@ const PrivacyPolicy = () => {
           name="keywords"
           content="QR Code Generator, Free QR Code Generator, QR Code Generator with Logo, Custom QR Code Generator, Secure QR Code Generator, QR Code Scanner, UPI QR Code Generator, QR Code Monkey, Canva QR Code, pixqr, privacy policy, data protection, user privacy"
         />
+
+         {/* Twitter Card */}
+         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="About PixQR - Stylish & Secure QR Code Generator" />
+        <meta name="twitter:description" content="Explore PixQR’s mission to simplify and secure QR code generation for everyone. Custom QR codes with logos, UPI, vCard, and more." />
+        <meta name="twitter:image" content="https://pixqr.online/assets/preview-banner.png" />
+        <meta name="twitter:site" content="@pix_qr" />
+
+        {/* Social Profiles */}
+        <link rel="me" href="https://www.linkedin.com/company/pixqr" />
+        <link rel="me" href="https://www.instagram.com/pixqr.online" />
       </Helmet>
 
       <img src={logo} alt="PixQR Logo" className="legal-logo" />

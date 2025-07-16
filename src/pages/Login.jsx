@@ -107,7 +107,7 @@ const Login = () => {
   <meta name="twitter:title" content="Login | PixQR - Secure QR Code Generator" />
   <meta name="twitter:description" content="Log in to access PixQR’s secure and stylish QR code generator with premium features." />
   <meta name="twitter:image" content="https://pixqr.online/assets/preview-banner.png" />
-  <meta name="twitter:site" content="@pixqr" />
+  <meta name="twitter:site" content="@pix_qr" />
 </Helmet>
 
 <SimpleNavbar />

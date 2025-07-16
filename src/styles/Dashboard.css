@@ -175,7 +175,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 10dvw;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px) !important;
   position: sticky;
   top: 0;
   z-index: 10;
@@ -317,7 +317,7 @@ body {
   }
 
   .user-popup{
-    backdrop-filter: blur(30px);
+    backdrop-filter: blur(30px) !important;
   }
   
 

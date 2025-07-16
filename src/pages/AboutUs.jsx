@@ -35,7 +35,7 @@ const AboutUs = () => {
         <meta name="twitter:title" content="About PixQR - Stylish & Secure QR Code Generator" />
         <meta name="twitter:description" content="Explore PixQR’s mission to simplify and secure QR code generation for everyone. Custom QR codes with logos, UPI, vCard, and more." />
         <meta name="twitter:image" content="https://pixqr.online/assets/preview-banner.png" />
-        <meta name="twitter:site" content="@pixqr" />
+        <meta name="twitter:site" content="@pix_qr" />
 
         {/* Social Profiles */}
         <link rel="me" href="https://www.linkedin.com/company/pixqr" />

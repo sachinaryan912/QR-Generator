@@ -15,7 +15,6 @@
   height: 160px;
   border: 3px solid #f5d442;
   position: relative;
-  border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 0 30px rgba(245, 212, 66, 0.3);
 }
