@@ -90,7 +90,7 @@ useEffect(() => {
 </Helmet>
 
 
-      <div className="landing-container" style={{ backgroundImage: `url('/assets/qr-bg1.jpeg')` }}>
+      <div className="landing-container" style={{ backgroundImage: `url('/assets/qr-bg2.jpeg')` }}>
         <div className="landing-overlay">
         <div className="landing-content">
   <div className="logo-data">

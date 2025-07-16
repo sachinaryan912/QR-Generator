@@ -132,7 +132,7 @@
   /* border-radius: 999px; */
   padding: 4px;
   gap: 4px;
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px) !important;
   max-width: 90vw;
   flex-wrap: wrap;
   justify-content: center;
@@ -204,7 +204,7 @@
   background: rgba(255, 255, 255, 0.02);
   border-radius: 0px;
   padding: 2rem;
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px) !important;
   border: 1px solid rgba(255, 255, 255, 0.08);
   color: #fff;
 }
@@ -279,7 +279,7 @@
   padding: 1.5rem;
   /* border-radius: 16px; */
   background: rgba(255, 255, 255, 0.02);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px) !important;
   color: #fff;
   transition: transform 0.3s ease;
 }
