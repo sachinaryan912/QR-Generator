@@ -4,18 +4,20 @@
     max-width: 900px;
     margin: auto;
     padding: 3rem 2rem;
-    background-color: #0d0d0d;
     color: #f5f5f5;
     font-family: 'Inter', sans-serif;
     line-height: 1.7;
-    border-radius: 1rem;
-    box-shadow: 0 0 20px rgba(255, 215, 0, 0.1);
   }
   
   .legal-container h1 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
     color: #ffd700;
+  }
+
+  .legal-logo{
+    width: 250px;
+    height: auto;
   }
   
   .legal-container h2 {
