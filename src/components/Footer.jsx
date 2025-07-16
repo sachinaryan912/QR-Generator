@@ -39,7 +39,7 @@ const Footer = () => (
         <a href="https://www.linkedin.com/company/pixqr" target="_blank" rel="noreferrer"><FaLinkedin /></a>
         <a href="https://www.instagram.com/pixqr.online" target="_blank" rel="noreferrer"><FaInstagram /></a>
         <a href="https://www.facebook.com/pixqr" target="_blank" rel="noreferrer"><FaFacebook /></a>
-        <a href="https://twitter.com/pixqr" target="_blank" rel="noreferrer"><FaTwitter /></a>
+        <a href="https://twitter.com/pix_qr" target="_blank" rel="noreferrer"><FaTwitter /></a>
       </div>
       <p>© 2025 PixQR. All rights reserved.</p>
     </div>

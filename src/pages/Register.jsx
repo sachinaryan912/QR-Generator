@@ -80,7 +80,7 @@ const Register = () => {
   <meta name="twitter:title" content="Register | PixQR - Create Free Account" />
   <meta name="twitter:description" content="Sign up and unlock PixQR's free and premium QR code generator. Add logos, business info, Wi-Fi, SMS, and more." />
   <meta name="twitter:image" content="https://pixqr.online/assets/preview-banner.png" />
-  <meta name="twitter:site" content="@pixqr" />
+  <meta name="twitter:site" content="@pix_qr" />
 </Helmet>
 
 <SimpleNavbar />

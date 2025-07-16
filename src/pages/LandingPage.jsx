@@ -82,7 +82,7 @@ useEffect(() => {
     content="Generate secure, stunning QR codes with PixQR. Add logos, scan directly, and bulk generate. Simple. Stylish. Secure."
   />
   <meta name="twitter:image" content="https://pixqr.online/assets/preview-banner.png" />
-  <meta name="twitter:site" content="@pixqr" />
+  <meta name="twitter:site" content="@pix_qr" />
 
   {/* Social Identity Links */}
   <link rel="me" href="https://www.linkedin.com/company/pixqr" />
@@ -90,7 +90,7 @@ useEffect(() => {
 </Helmet>
 
 
-      <div className="landing-container" style={{ backgroundImage: `url('/assets/qr-bg2.jpeg')` }}>
+      <div className="landing-container" style={{ backgroundImage: `url('/assets/qr-bg1.jpeg')` }}>
         <div className="landing-overlay">
         <div className="landing-content">
   <div className="logo-data">

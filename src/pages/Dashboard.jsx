@@ -81,11 +81,16 @@ const cardData = [
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://pixqr.online/assets/preview-banner.png" />
 
-  {/* Twitter Card */}
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Dashboard | PixQR - Generate Smart QR Codes" />
-  <meta name="twitter:description" content="Customize and manage your QR codes using the PixQR Dashboard. Stylish, secure, and feature-rich." />
-  <meta name="twitter:image" content="https://pixqr.online/assets/preview-banner.png" />
+   {/* Twitter Card */}
+   <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="About PixQR - Stylish & Secure QR Code Generator" />
+        <meta name="twitter:description" content="Explore PixQR’s mission to simplify and secure QR code generation for everyone. Custom QR codes with logos, UPI, vCard, and more." />
+        <meta name="twitter:image" content="https://pixqr.online/assets/preview-banner.png" />
+        <meta name="twitter:site" content="@pix_qr" />
+
+        {/* Social Profiles */}
+        <link rel="me" href="https://www.linkedin.com/company/pixqr" />
+        <link rel="me" href="https://www.instagram.com/pixqr.online" />
 </Helmet>
 
      <div className="dashboard">
