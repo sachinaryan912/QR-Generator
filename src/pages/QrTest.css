@@ -1,0 +1,124 @@
+.fancy-qr-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #f5f5f5;
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+    margin-top: 1rem;
+    min-height: 100dvh;
+  }
+  
+  .qr-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10rem;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .controller{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    max-width: 400px;
+    gap: 1rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .output-layout{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    max-width: 400px;
+
+  }
+  
+  .qr-input {
+    padding: 0.8rem;
+    border-radius: 10px;
+    border: none;
+    width: 100%;
+    font-size: 1rem;
+    outline: none;
+    color: #f5f5f5;
+    background-color: #202020;
+  }
+  
+  .color-options {
+    display: flex;
+    gap: 0.6rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .color-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  .color-btn.active {
+    border-color: #ffffff;
+    transform: scale(1.2);
+  }
+  
+  .type-selects {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .type-selects select {
+    padding: 0.4rem 0.6rem;
+    border-radius: 10px;
+    border: none;
+    background-color: #202020;
+    color: #f5f5f5;
+    font-size: 0.9rem;
+  }
+  
+  .qr-output {
+    margin-top: 1rem;
+  }
+  
+  .download-btn {
+    background: #f5d442;
+    color: #121212;
+    font-weight: bold;
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  
+  .upload-input {
+    background: #1a1a1a;
+    color: white;
+    padding: 0.4rem;
+    border-radius: 10px;
+    margin-top: 0.5rem;
+    width: 100%;
+  }
+
+  .margin-slider {
+    text-align: center;
+  }
+  
+  .margin-slider input[type="range"] {
+    width: 80%;
+  }
+  
+  
