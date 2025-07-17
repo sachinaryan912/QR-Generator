@@ -5,6 +5,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { signOut } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../firebase";
+import "../styles/Navbar.css";
+
 
 const Navbar = ({ userData }) => {
   const [showPopup, setShowPopup] = useState(false);

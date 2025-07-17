@@ -19,6 +19,7 @@ import Blog from "./pages/Blog";
 import BlogPage from "./pages/subpages/BlogPage";
 import NotFound from "./pages/NotFound";
 import TaskBoard from "./pages/TaskBoard";
+import QRTest from "./pages/QrTest";
 
 function App() {
 
@@ -43,6 +44,8 @@ function App() {
         <Route path="/blog/:slug" element={<BlogPage />} />
         <Route path="*" element={<NotFound />} />
         <Route path="/tasks" element={<TaskBoard />} />
+        <Route path="/testqr" element={<QRTest />} />
+
         {/* <Route path="/image" element={<ImageEncoder />} /> */}
 
       </Routes>

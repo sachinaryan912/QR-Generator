@@ -1,170 +1,194 @@
-import React, { useEffect, useState } from "react";
-import {  onAuthStateChanged } from "firebase/auth";
+import React, { useEffect, useRef, useState } from "react";
+import QRCodeStyling from "qr-code-styling";
+import { onAuthStateChanged } from "firebase/auth";
 import { auth, database } from "../firebase";
 import { ref, get } from "firebase/database";
 import { useNavigate } from "react-router-dom";
 import "../styles/Dashboard.css";
-import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
 import Loader from "../components/Loader";
-import { Helmet } from "react-helmet"; // for SEO
+import { Helmet } from "react-helmet";
+import {
+  FaGlobe, FaFont, FaEnvelope, FaInstagram, FaFacebook, FaTwitter,
+  FaAddressCard, FaWifi, FaSms
+} from "react-icons/fa";
+
+// Default QR type content
+const qrTypeDefaults = {
+  URL: { icon: <FaGlobe />, data: "https://pixqr.com" },
+  Text: { icon: <FaFont />, data: "Hello, PixQR!" },
+  Email: { icon: <FaEnvelope />, data: "pixqr@gmail.com" },
+  Instagram: { icon: <FaInstagram />, data: "https://instagram.com/" },
+  Facebook: { icon: <FaFacebook />, data: "https://facebook.com/" },
+  Twitter: { icon: <FaTwitter />, data: "https://twitter.com/" },
+  vCard: { icon: <FaAddressCard />, data: "BEGIN:VCARD\nFN:PixQR\nEMAIL:pixqr@gmail.com" },
+  WiFi: { icon: <FaWifi />, data: "WIFI:T:WPA;S:PixQR;P:password;;" },
+  SMS: { icon: <FaSms />, data: "sms:+1234567890:Hi!" },
+};
 
 const Dashboard = () => {
-  const navigate = useNavigate();
+  const qrRef = useRef(null);
+  const [content, setContent] = useState(qrTypeDefaults["URL"].data);
+  const [dotColor, setDotColor] = useState("#000");
+  const [dotType, setDotType] = useState("square");
+  const [logoFile, setLogoFile] = useState(null);
+  const [selectedType, setSelectedType] = useState("URL");
   const [userData, setUserData] = useState(null);
-  const [showList, setShowList] = useState(true);
-const [isMobile, setIsMobile] = useState(false);
+  const navigate = useNavigate();
 
+  const qrCode = useRef(
+    new QRCodeStyling({
+      width: 250,
+      height: 250,
+      data: content,
+      dotsOptions: { color: dotColor, type: dotType },
+      backgroundOptions: { color: "#fff" },
+      imageOptions: { crossOrigin: "anonymous", margin: 5 },
+    })
+  ).current;
 
-useEffect(() => {
-  const checkMobile = () => setIsMobile(window.innerWidth <= 768);
-  checkMobile();
-  window.addEventListener("resize", checkMobile);
-  return () => window.removeEventListener("resize", checkMobile);
-}, []);
+  // Append QR Code only once
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (qrRef.current && qrRef.current.childElementCount === 0) {
+        qrCode.append(qrRef.current);
+        console.log("✅ QR code appended");
+      }
+    }, 100);
+    return () => clearTimeout(timer);
+  }, []);
 
+  // Update QR when content or styles change
+  useEffect(() => {
+    const imageUrl = logoFile ? URL.createObjectURL(logoFile) : "";
+    console.log("✅ Updating QR code with:", content);
+    qrCode.update({
+      data: content,
+      dotsOptions: { color: dotColor, type: dotType },
+      image: imageUrl,
+    });
 
+    return () => {
+      if (imageUrl) URL.revokeObjectURL(imageUrl);
+    };
+  }, [content, dotColor, dotType, logoFile]);
 
-const cardData = [
-  { title: "URL", description: "Redirect users to any website", img: "/assets/URL.png", path: "/generate/url" },
-  { title: "Text", description: "Display static text/message", img: "/assets/Text.png", path: "/generate/text" },
-  { title: "Email", description: "Pre-filled recipient & subject", img: "/assets/Email.png", path: "/generate/email" },
-  { title: "Wi-Fi", description: "Share network SSID & password instantly", img: "/assets/WiFi.png", path: "/generate/wifi" },
-  { title: "vCard", description: "Share business/contact info in 1 scan", img: "/assets/vCard.png", path: "/generate/vcard" },
-  { title: "SMS", description: "Pre-filled message with phone number", img: "/assets/SMS.png", path: "/generate/sms" },
-  { title: "Location", description: "Share Google Maps or geo-coordinates", img: "/assets/Location.png", path: "/generate/location" },
-];
+  const pickType = (type) => {
+    setSelectedType(type);
+    setContent(qrTypeDefaults[type].data);
+  };
 
-  
+  const onLogoChange = (e) => {
+    const file = e.target.files[0];
+    setLogoFile(file);
+  };
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, async (user) => {
-      if (user) {
-        const snapshot = await get(ref(database, `users/${user.uid}`));
-        if (snapshot.exists()) {
-          setUserData(snapshot.val());
-        }
+    const unsub = onAuthStateChanged(auth, async (u) => {
+      if (u) {
+        const snap = await get(ref(database, `users/${u.uid}`));
+        if (snap.exists()) setUserData(snap.val());
       } else {
         navigate("/login");
       }
     });
-    return () => unsubscribe();
+    return unsub;
   }, [navigate]);
 
-
-
-  if (!userData) {
-    return <Loader text="Please wait! Fetching data..."/>;
-  }
+  if (!userData) return <Loader text="Loading dashboard..." />;
 
   return (
-
     <>
-    <Helmet>
-  <title>Dashboard | PixQR - Generate Smart QR Codes</title>
-  <meta
-    name="description"
-    content="Your personal PixQR dashboard to generate, customize, and manage secure QR codes for URL, Text, SMS, vCard, and more. 100% private & encrypted."
-  />
-  <meta
-    name="keywords"
-    content="PixQR dashboard, QR generator dashboard, manage QR codes, create QR code, custom QR, branded QR generator, PixQR user panel"
-  />
-  <meta name="robots" content="index, follow" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="canonical" href="https://pixqr.online/dashboard" />
+      <Helmet><title>PixQR Dashboard</title></Helmet>
+      <div className="dashboard-container">
+        <div className="bg-overlay" />
+        <Navbar userData={userData} />
 
-  {/* Open Graph */}
-  <meta property="og:title" content="Dashboard | PixQR - Generate QR Codes" />
-  <meta property="og:description" content="Access your PixQR dashboard to generate stylish QR codes, manage tokens, and customize designs with encryption and ease." />
-  <meta property="og:url" content="https://pixqr.online/dashboard" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://pixqr.online/assets/preview-banner.png" />
+        <main className="main-content">
+          <h1>Generate & Publish <span className="highlight">Dynamic</span> QR Codes</h1>
+          <p className="description">Customize your QR code with style, logo, pattern, and color.</p>
 
-   {/* Twitter Card */}
-   <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="About PixQR - Stylish & Secure QR Code Generator" />
-        <meta name="twitter:description" content="Explore PixQR’s mission to simplify and secure QR code generation for everyone. Custom QR codes with logos, UPI, vCard, and more." />
-        <meta name="twitter:image" content="https://pixqr.online/assets/preview-banner.png" />
-        <meta name="twitter:site" content="@pix_qr" />
+          <div className="controls-grid">
+            {/* QR Type */}
+            <div className="card type-card">
+              <h3>QR Type</h3>
+              <div className="grid-two">
+                {Object.entries(qrTypeDefaults).map(([t, { icon }]) => (
+                  <div
+                    key={t}
+                    className={`type-chip ${selectedType === t ? "active" : ""}`}
+                    onClick={() => pickType(t)}
+                  >
+                    {icon}<span>{t}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
 
-        {/* Social Profiles */}
-        <link rel="me" href="https://www.linkedin.com/company/pixqr" />
-        <link rel="me" href="https://www.instagram.com/pixqr.online" />
-</Helmet>
+            {/* QR Input & Preview */}
+            <div className="card input-card">
+              <input
+                value={content}
+                onChange={(e) => setContent(e.target.value)}
+                className="url-input"
+                placeholder="Enter URL or text..."
+              />
+              <div ref={qrRef} className="qr-canvas" />
+            </div>
 
-     <div className="dashboard">
-      <Navbar userData={userData} />
-      <main className="main-section">
-        
-      <div className="dashboard-intro">
-      <h2>Welcome to PixQR 👋</h2>
-  <p>
-    Create beautifully branded and functional QR codes for every need — from sharing contact details to Wi-Fi,
-    locations, and more. Whether you're a content creator, business owner, or enthusiast, PixQR makes QR generation
-    stylish, fast, and secure.
-  </p>
+            {/* Options */}
+            <div className="card options-card">
+              <h3>Color</h3>
+              <div className="color-options">
+                {["#000","#f00","#0f0","#00f","#ffa500","#800080","#0ff"].map(c => (
+                  <button
+                    key={c}
+                    className="color-circle"
+                    style={{ background: c }}
+                    onClick={() => setDotColor(c)}
+                  />
+                ))}
+              </div>
 
-  {isMobile && (
-    <button className="toggle-btn" onClick={() => setShowList(!showList)}>
-      {showList ? "Hide Details ▲" : "Show Details ▼"}
-    </button>
-  )}
+              <div className="premium-chips">
+                {["gold","silver","bronze"].map(p => (
+                  <div
+                    key={p}
+                    className={`premium-chip ${p}`}
+                    onClick={() => setDotColor(`url(#${p})`)}
+                  >
+                    {p.charAt(0).toUpperCase() + p.slice(1)}
+                  </div>
+                ))}
+              </div>
 
-  <div className={`collapsible-list ${showList ? "open" : ""}`}>
-    <ul>
-    <li>🔐 <strong>Privacy first:</strong> All your data is <strong>end-to-end encrypted</strong>. We never track your QR content.</li>
-    
-    <li>⚡ <strong>Have tokens?</strong> Unlock advanced QR types like vCards, Wi-Fi, SMS, and premium designs.</li>
-    <li>🎨 <strong>Premium perks:</strong> Add logos, gradients, background images, and more customization options.</li>
-    <li>🆓 <strong>Free features:</strong> Basic QR generation (URL, Text) is available to everyone after login.</li>
-    <li>🪪 <strong>Login Required:</strong> Access to PixQR's features requires login to manage your tokens, designs, and saved QR codes securely.</li>
- 
-    </ul>
-  </div>
-</div>
+              <h3>Pattern</h3>
+              <div className="pattern-options">
+                {["square","dots","rounded"].map(pt => (
+                  <div
+                    key={pt}
+                    className={`pattern-chip ${dotType === pt ? "active" : ""}`}
+                    onClick={() => setDotType(pt)}
+                  >{pt}</div>
+                ))}
+              </div>
 
+              <h3>Logo (optional)</h3>
+              <input type="file" accept="image/*" onChange={onLogoChange} />
+            </div>
+          </div>
 
-
-<h2 className="section-title">Generate QR Codes</h2>
-
-        <div className="card-grid">
-        {cardData.map((card) => (
-          <motion.div
-            className="card glass-card"
-            key={card.title}
-            whileHover="hovered"
-            initial="rest"
-            animate="rest"
-            onClick={() => navigate(card.path)}
-            style={{ cursor: "pointer" }}
-          >
-            <motion.img
-              src={card.img}
-              alt={`${card.title} icon`}
-              className="card-icon"
-              variants={{
-                hovered: {
-                  rotate: [0, -6, 6, -6, 0],
-                  transition: { duration: 0.6, ease: "easeInOut" },
-                },
-                rest: { rotate: 0 },
-              }}
-            />
-            <h3>{card.title}</h3>
-            <p className="card-description">{card.description}</p>
-          </motion.div>
-        ))}
-
-        </div>
-
-
-      </main>
-    </div>
+          {/* Gradients for premium colors */}
+          <svg width="0" height="0">
+            <defs>
+              <linearGradient id="gold"><stop stopColor="#FFD700"/><stop offset="1" stopColor="#FFA500"/></linearGradient>
+              <linearGradient id="silver"><stop stopColor="#C0C0C0"/><stop offset="1" stopColor="#A9A9A9"/></linearGradient>
+              <linearGradient id="bronze"><stop stopColor="#CD7F32"/><stop offset="1" stopColor="#8B4513"/></linearGradient>
+            </defs>
+          </svg>
+        </main>
+      </div>
     </>
-    
-    
-   
   );
 };
 
