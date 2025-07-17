@@ -12,18 +12,20 @@ import {
   FaGlobe, FaFont, FaEnvelope, FaInstagram, FaFacebook, FaTwitter,
   FaAddressCard, FaWifi, FaSms
 } from "react-icons/fa";
+import QRGenerator from "../components/QRGenerator";
+import QRGeneratorPremium from "../components/QRGeneratorPremium";
 
 // Default QR type content
 const qrTypeDefaults = {
-  URL: { icon: <FaGlobe />, data: "https://pixqr.com" },
-  Text: { icon: <FaFont />, data: "Hello, PixQR!" },
-  Email: { icon: <FaEnvelope />, data: "pixqr@gmail.com" },
-  Instagram: { icon: <FaInstagram />, data: "https://instagram.com/" },
-  Facebook: { icon: <FaFacebook />, data: "https://facebook.com/" },
-  Twitter: { icon: <FaTwitter />, data: "https://twitter.com/" },
-  vCard: { icon: <FaAddressCard />, data: "BEGIN:VCARD\nFN:PixQR\nEMAIL:pixqr@gmail.com" },
-  WiFi: { icon: <FaWifi />, data: "WIFI:T:WPA;S:PixQR;P:password;;" },
-  SMS: { icon: <FaSms />, data: "sms:+1234567890:Hi!" },
+  URL: {label:"URL", icon: <FaGlobe />, data: "https://pixqr.com" },
+  Text: {label:"Text", icon: <FaFont />, data: "Hello, PixQR!" },
+  Email: {label:"Email", icon: <FaEnvelope />, data: "pixqr@gmail.com" },
+  Instagram: {label:"Instagram",icon: <FaInstagram />, data: "https://instagram.com/" },
+  Facebook: {label:"Facebook", icon: <FaFacebook />, data: "https://facebook.com/" },
+  Twitter: {label:"Twitter", icon: <FaTwitter />, data: "https://twitter.com/" },
+  vCard: {label:"vCard", icon: <FaAddressCard />, data: "BEGIN:VCARD\nFN:PixQR\nEMAIL:pixqr@gmail.com" },
+  WiFi: {label:"WiFi",icon: <FaWifi />, data: "WIFI:T:WPA;S:PixQR;P:password;;" },
+  SMS: { label:"SMS",icon: <FaSms />, data: "sms:+1234567890:Hi!" },
 };
 
 const Dashboard = () => {
@@ -34,6 +36,7 @@ const Dashboard = () => {
   const [logoFile, setLogoFile] = useState(null);
   const [selectedType, setSelectedType] = useState("URL");
   const [userData, setUserData] = useState(null);
+  const [qrType, setQrType] = useState("URL");
   const navigate = useNavigate();
 
   const qrCode = useRef(
@@ -76,6 +79,7 @@ const Dashboard = () => {
   const pickType = (type) => {
     setSelectedType(type);
     setContent(qrTypeDefaults[type].data);
+    setQrType(qrTypeDefaults[type].label);
   };
 
   const onLogoChange = (e) => {
@@ -126,7 +130,8 @@ const Dashboard = () => {
             </div>
 
             {/* QR Input & Preview */}
-            <div className="card input-card">
+             <QRGeneratorPremium qrType={qrType}/>
+            {/* <div className="card input-card">
               <input
                 value={content}
                 onChange={(e) => setContent(e.target.value)}
@@ -134,10 +139,10 @@ const Dashboard = () => {
                 placeholder="Enter URL or text..."
               />
               <div ref={qrRef} className="qr-canvas" />
-            </div>
+            </div> */}
 
             {/* Options */}
-            <div className="card options-card">
+            {/* <div className="card options-card">
               <h3>Color</h3>
               <div className="color-options">
                 {["#000","#f00","#0f0","#00f","#ffa500","#800080","#0ff"].map(c => (
@@ -175,17 +180,17 @@ const Dashboard = () => {
 
               <h3>Logo (optional)</h3>
               <input type="file" accept="image/*" onChange={onLogoChange} />
-            </div>
+            </div> */}
           </div>
 
           {/* Gradients for premium colors */}
-          <svg width="0" height="0">
+          {/* <svg width="0" height="0">
             <defs>
               <linearGradient id="gold"><stop stopColor="#FFD700"/><stop offset="1" stopColor="#FFA500"/></linearGradient>
               <linearGradient id="silver"><stop stopColor="#C0C0C0"/><stop offset="1" stopColor="#A9A9A9"/></linearGradient>
               <linearGradient id="bronze"><stop stopColor="#CD7F32"/><stop offset="1" stopColor="#8B4513"/></linearGradient>
             </defs>
-          </svg>
+          </svg> */}
         </main>
       </div>
     </>
